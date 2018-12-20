@@ -16,7 +16,7 @@ import javax.swing.SwingUtilities;
  */
 public class XmasLifeGame extends JPanel implements Runnable {
 
-	static int[][] tree; // 描画するツリーを格納する配列
+	private static int[][] tree; // 描画するツリーを格納する配列
 
 	/**
 	 * 初期化処理
@@ -24,7 +24,7 @@ public class XmasLifeGame extends JPanel implements Runnable {
 	 * 消灯している(死んでいる)か設定する。
 	 * 設定後、ツリーのイルミネーションをスタートさせる。
 	 */
-	public XmasLifeGame() {
+	private XmasLifeGame() {
 		setPreferredSize(new Dimension(XmasConstants.FRAME_WIDTH, XmasConstants.FRAME_HEIGHT));
 
 		tree = new int[XmasConstants.MATRIX_HEIGHT][XmasConstants.MATRIX_WIDTH];
@@ -109,7 +109,7 @@ public class XmasLifeGame extends JPanel implements Runnable {
 	/**
 	 * JFrameを使ってツリーの描画処理を呼び出すメソッド
 	 */
-	public static void createXmasTree() {
+	private static void createXmasTree() {
 		JFrame f = new JFrame("メリークリスマス…");
 		f.getContentPane().setLayout(new FlowLayout());
 		f.getContentPane().add(new XmasLifeGame());
