@@ -13,8 +13,8 @@ public class LifeGameManager {
 	 * @return newLifeGameMatrix
 	 */
 	protected static int[][] generateNewLifeGameMatrix(int[][] lifeGameMatrix) {
-		// 各ルールに従って、ツリーの状態を更新して返す
 
+		// 新規の配列を定義
 		int[][] newLifeGameMatrix = new int[lifeGameMatrix.length][lifeGameMatrix[0].length];
 
 		for (int i = 0; i < lifeGameMatrix.length; i++) {
@@ -27,7 +27,7 @@ public class LifeGameManager {
 					// 周囲8マスで生きているセルをカウントする
 					int aliveCellsCount = getAliveCellsCount(lifeGameMatrix, i, j);
 
-					// セルが生きている場合
+					// 対象のセルが生きている場合
 					if (lifeGameMatrix[i][j] == 1) {
 						//【過疎】
 						// 生きているセルに隣接する生きたセルが1つ以下ならば、過疎により死滅する。
@@ -47,7 +47,7 @@ public class LifeGameManager {
 						}
 					}
 
-					// セルが死んでいる場合
+					// 対象のセルが死んでいる場合
 					if (lifeGameMatrix[i][j] == 0) {
 						//【誕生】
 						// 死んでいるセルに隣接する生きたセルがちょうど3つあれば、次の世代が誕生する。
