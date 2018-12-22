@@ -120,7 +120,7 @@ public class XmasLifeGame extends JPanel implements Runnable {
 	}
 
 	/**
-	 * 100ミリ秒ごとに画面を書き換えるためのメソッド
+	 * 150ミリ秒ごとに画面を書き換えるためのメソッド
 	 */
 	public void run() {
 		try {
